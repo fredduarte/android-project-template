@@ -19,4 +19,6 @@ object Versions {
     const val materialComponents = "1.2.1"
 
     const val navigationComponent = "2.3.1"
+
+    const val recyclerView = "1.1.0"
 }

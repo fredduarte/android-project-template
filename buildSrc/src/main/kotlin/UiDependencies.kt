@@ -7,4 +7,6 @@ object UiDependencies {
     const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
     const val navigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationComponent}"
+
+    const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
 }

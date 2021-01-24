@@ -72,4 +72,6 @@ dependencies {
     implementation(UiDependencies.navigationRuntimeKtx)
     implementation(UiDependencies.navigationFragmentKtx)
     implementation(UiDependencies.navigationUiKtx)
+
+    implementation(UiDependencies.recyclerView)
 }
