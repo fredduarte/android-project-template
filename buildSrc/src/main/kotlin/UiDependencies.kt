@@ -9,4 +9,7 @@ object UiDependencies {
     const val navigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationComponent}"
 
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
+
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 }

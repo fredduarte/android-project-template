@@ -74,4 +74,7 @@ dependencies {
     implementation(UiDependencies.navigationUiKtx)
 
     implementation(UiDependencies.recyclerView)
+
+    implementation(UiDependencies.glide)
+    kapt(UiDependencies.glideCompiler)
 }

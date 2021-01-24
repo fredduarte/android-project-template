@@ -21,4 +21,6 @@ object Versions {
     const val navigationComponent = "2.3.1"
 
     const val recyclerView = "1.1.0"
+
+    const val glide = "4.11.0"
 }
