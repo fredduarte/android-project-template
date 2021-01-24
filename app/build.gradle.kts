@@ -69,6 +69,9 @@ dependencies {
     implementation(UiDependencies.constraintLayout)
     implementation(UiDependencies.materialComponents)
 
+    implementation(LifecycleDependencies.viewModelKtx)
+    implementation(LifecycleDependencies.liveDataKtx)
+
     implementation(UiDependencies.navigationRuntimeKtx)
     implementation(UiDependencies.navigationFragmentKtx)
     implementation(UiDependencies.navigationUiKtx)
