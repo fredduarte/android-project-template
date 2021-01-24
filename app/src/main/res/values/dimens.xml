@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Card Radius -->
+    <dimen name="standard_card_radius_small">8dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="standard_margin_small">8dp</dimen>
+    <dimen name="standard_margin_medium">12dp</dimen>
+    <dimen name="standard_margin_big">16dp</dimen>
+
+</resources>
