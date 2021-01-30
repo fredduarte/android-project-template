@@ -17,4 +17,6 @@ object Versions {
 
     const val constraintLayout = "2.0.4"
     const val materialComponents = "1.2.1"
+
+    const val navigationComponent = "2.3.1"
 }

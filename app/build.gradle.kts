@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("androidx.navigation.safeargs")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
@@ -67,4 +68,8 @@ dependencies {
 
     implementation(UiDependencies.constraintLayout)
     implementation(UiDependencies.materialComponents)
+
+    implementation(UiDependencies.navigationRuntimeKtx)
+    implementation(UiDependencies.navigationFragmentKtx)
+    implementation(UiDependencies.navigationUiKtx)
 }
