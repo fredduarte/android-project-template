@@ -16,12 +16,24 @@
             android:id="@+id/main_to_simple_list"
             app:destination="@id/fragment_simple_list"/>
 
+        <action
+            android:id="@+id/main_to_multi_view_list"
+            app:destination="@id/fragment_multi_view_list"/>
+
     </fragment>
 
     <fragment
         android:id="@+id/fragment_simple_list"
         android:name="com.template.project.android.lists.SimpleListFragment"
         android:label="SimpleListFragment"
-        tools:layout="@layout/fragment_simple_list"/>
+        tools:layout="@layout/fragment_simple_list">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_multi_view_list"
+        android:name="com.template.project.android.lists.MultiViewListFragment"
+        android:label="MultiViewListFragment"
+        tools:layout="@layout/fragment_multi_view_list"/>
 
 </navigation>
