@@ -10,6 +10,18 @@
         android:id="@+id/fragment_main"
         android:name="com.template.project.android.main.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/main_to_simple_list"
+            app:destination="@id/fragment_simple_list"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_simple_list"
+        android:name="com.template.project.android.lists.SimpleListFragment"
+        android:label="SimpleListFragment"
+        tools:layout="@layout/fragment_simple_list"/>
 
 </navigation>
