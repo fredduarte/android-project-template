@@ -26,3 +26,9 @@ fun UserModel.toUserListItemUiModel(): UserListItemUiModel {
         profilePhoto = this.profilePhoto
     )
 }
+
+fun UserModel.toPhotoListItemUiModel(): PhotoListItemUiModel {
+    return PhotoListItemUiModel(
+        photoUrl = this.profilePhoto
+    )
+}
