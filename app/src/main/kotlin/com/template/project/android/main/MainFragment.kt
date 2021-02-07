@@ -67,7 +67,11 @@ class MainFragment : Fragment() {
     }
 
     private fun createButtonListItemUiModels(): List<ButtonListItemUiModel> {
-        return listOf(createButtonToSimpleList(), createButtonToMultiViewList())
+        return listOf(
+            createButtonToSimpleList(),
+            createButtonToMultiViewList(),
+            createButtonToNestedMultiViewList()
+        )
     }
 
     private fun createButtonToSimpleList(): ButtonListItemUiModel {
@@ -84,6 +88,15 @@ class MainFragment : Fragment() {
             text = "MultiViewListFragment",
             onClicked = { view ->
                 view.findNavController().navigate(MainFragmentDirections.mainToMultiViewList())
+            }
+        )
+    }
+
+    private fun createButtonToNestedMultiViewList(): ButtonListItemUiModel {
+        return ButtonListItemUiModel(
+            text = "NestedMultiViewListFragment",
+            onClicked = { view ->
+                view.findNavController().navigate(MainFragmentDirections.mainToNestedMultiViewList())
             }
         )
     }
