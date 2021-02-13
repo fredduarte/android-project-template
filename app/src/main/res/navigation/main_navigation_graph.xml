@@ -14,11 +14,15 @@
 
         <action
             android:id="@+id/main_to_simple_list"
-            app:destination="@id/fragment_simple_list"/>
+            app:destination="@id/fragment_simple_list" />
 
         <action
             android:id="@+id/main_to_multi_view_list"
-            app:destination="@id/fragment_multi_view_list"/>
+            app:destination="@id/fragment_multi_view_list" />
+
+        <action
+            android:id="@+id/main_to_nested_multi_view_list"
+            app:destination="@id/fragment_nested_multi_view_list" />
 
     </fragment>
 
@@ -34,6 +38,12 @@
         android:id="@+id/fragment_multi_view_list"
         android:name="com.template.project.android.lists.MultiViewListFragment"
         android:label="MultiViewListFragment"
-        tools:layout="@layout/fragment_multi_view_list"/>
+        tools:layout="@layout/fragment_multi_view_list" />
+
+    <fragment
+        android:id="@+id/fragment_nested_multi_view_list"
+        android:name="com.template.project.android.lists.NestedMultiViewListFragment"
+        android:label="NestedMultiViewListFragment"
+        tools:layout="@layout/fragment_nested_multi_view_list" />
 
 </navigation>
