@@ -40,7 +40,7 @@ object UsersMockData {
         return users
     }
 
-    private fun generateUserModel(): UserModel {
+    fun generateUserModel(): UserModel {
         val index = random.nextInt(USER_FIRST_NAMES.size) % USER_FIRST_NAMES.size
 
         return UserModel(
