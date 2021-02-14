@@ -32,3 +32,11 @@ fun UserModel.toPhotoListItemUiModel(): PhotoListItemUiModel {
         photoUrl = this.profilePhoto
     )
 }
+
+fun List<UserModel>.toNestedUserListItemUiModelList(): UserNestedListItemUiModel {
+    return UserNestedListItemUiModel(
+        users = this.map { userModel ->
+            userModel.toUserListItemUiModel()
+        }
+    )
+}
