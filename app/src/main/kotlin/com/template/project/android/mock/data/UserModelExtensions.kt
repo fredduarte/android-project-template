@@ -40,3 +40,11 @@ fun List<UserModel>.toNestedUserListItemUiModelList(): UserNestedListItemUiModel
         }
     )
 }
+
+fun List<UserModel>.toNestedUserGridItemUiModelList(): UserNestedGridItemUiModel {
+    return UserNestedGridItemUiModel(
+        users = this.map { userModel ->
+            userModel.toUserListItemUiModel()
+        }
+    )
+}

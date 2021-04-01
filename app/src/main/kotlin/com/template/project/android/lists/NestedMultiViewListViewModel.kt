@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.template.project.android.common.recyclerview.BindingNestedUiModel
 import com.template.project.android.mock.UsersMockData
+import com.template.project.android.mock.data.toNestedUserGridItemUiModelList
 import com.template.project.android.mock.data.toNestedUserListItemUiModelList
 import com.template.project.android.mock.data.toUserListItemUiModel
 import java.util.Random
@@ -15,7 +16,7 @@ class NestedMultiViewListViewModel : ViewModel() {
     val uiModelsNested: LiveData<List<BindingNestedUiModel>> = _uiModelsNested
 
     fun getNewUiModelsNested() {
-        val maxNumberOfTypes = 2
+        val maxNumberOfTypes = 3
         val numberOfUiModels = 20
         val newUiModels = mutableListOf<BindingNestedUiModel>()
         val random = Random()
@@ -26,8 +27,9 @@ class NestedMultiViewListViewModel : ViewModel() {
 
             newUiModels.add(
                 when {
-                    (nextInt == 0) -> { UsersMockData.generateUserModel().toUserListItemUiModel() }
-                    else -> { UsersMockData.generateUserModels().toNestedUserListItemUiModelList() }
+                    (nextInt == 0) -> { UsersMockData.generateUserModels(count = 10).toNestedUserListItemUiModelList() }
+                    (nextInt == 1) -> { UsersMockData.generateUserModels(count = 10).toNestedUserListItemUiModelList() }
+                    else -> { UsersMockData.generateUserModels(count = 10).toNestedUserListItemUiModelList() }
                 }
             )
         }

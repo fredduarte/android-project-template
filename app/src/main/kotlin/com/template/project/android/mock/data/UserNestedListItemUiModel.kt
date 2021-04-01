@@ -25,7 +25,7 @@ class UserNestedListItemUiModel(
         ),
         layoutParameters = LayoutParameters(
             width = ViewGroup.LayoutParams.MATCH_PARENT,
-            height = 100.dp2Px()
+            height = ViewGroup.LayoutParams.WRAP_CONTENT
         ),
         viewPoolVariableId = BR.viewPool
     )

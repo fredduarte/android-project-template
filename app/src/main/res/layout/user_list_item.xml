@@ -14,13 +14,13 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:cardBackgroundColor="@color/color_red_01"
         app:cardCornerRadius="@dimen/standard_card_radius_small">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/gl_image_end"
