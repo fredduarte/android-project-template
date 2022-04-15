@@ -26,7 +26,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_items"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:multiViewItems="@{uiModel.users}"
             app:layoutManagerType="@{uiModel.recyclerParameters.layoutManagerType}"
             app:itemDecoration="@{uiModel.recyclerParameters.itemDecoration}"
