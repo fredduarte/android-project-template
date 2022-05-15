@@ -4,13 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleRegistry
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class BindingNestedMultiViewListAdapter<T : BindingNestedUiModel>(
-    diffUtilCallback: DiffUtil.ItemCallback<T> = DiffUtilCallback()
-) : ListAdapter<T, BindingNestedMultiViewHolder<T>>(diffUtilCallback) {
+    diffUtilCallback: DiffUtil.ItemCallback<T> = DiffUtilCallback(),
+    private val parentLifecycleOwner: LifecycleOwner? = null
+) : ListAdapter<T, BindingNestedMultiViewHolder<T>>(diffUtilCallback),
+    LifecycleOwner {
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -18,12 +23,16 @@ class BindingNestedMultiViewListAdapter<T : BindingNestedUiModel>(
         parent: ViewGroup,
         viewType: Int
     ): BindingNestedMultiViewHolder<T> {
-        val binding: ViewDataBinding = DataBindingUtil.inflate(
+        val binding: ViewDataBinding = DataBindingUtil.inflate<ViewDataBinding?>(
             LayoutInflater.from(parent.context),
             viewType,
             parent,
             false
-        )
+        ).apply {
+            parentLifecycleOwner?.let { owner ->
+                lifecycleOwner = owner
+            }
+        }
 
         return BindingNestedMultiViewHolder(binding)
     }
@@ -53,5 +62,33 @@ class BindingNestedMultiViewListAdapter<T : BindingNestedUiModel>(
 
     override fun getItemViewType(position: Int): Int {
         return getItem(position).layoutId
+    }
+
+    private val lifecycleRegistry = LifecycleRegistry(this)
+    private var wasPaused: Boolean = false
+    init {
+        lifecycleRegistry.currentState = Lifecycle.State.INITIALIZED
+    }
+    fun markCreated() {
+        lifecycleRegistry.currentState = Lifecycle.State.CREATED
+    }
+    fun markAttach() {
+        if (wasPaused) {
+            lifecycleRegistry.currentState = Lifecycle.State.RESUMED
+            wasPaused = false
+        } else {
+            lifecycleRegistry.currentState = Lifecycle.State.STARTED
+        }
+    }
+    fun markDetach() {
+        wasPaused = true
+        lifecycleRegistry.currentState = Lifecycle.State.CREATED
+    }
+    fun markDestroyed() {
+        lifecycleRegistry.currentState = Lifecycle.State.DESTROYED
+    }
+
+    override fun getLifecycle(): Lifecycle {
+        return lifecycleRegistry
     }
 }
