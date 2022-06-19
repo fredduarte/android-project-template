@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class BindingNestedMultiViewListAdapter<T : BindingNestedUiModel>(
     diffUtilCallback: DiffUtil.ItemCallback<T> = DiffUtilCallback(),
-    private val parentLifecycleOwner: LifecycleOwner? = null
+    private val lifecycleOwner: LifecycleOwner? = null
 ) : ListAdapter<T, BindingNestedMultiViewHolder<T>>(diffUtilCallback),
     LifecycleOwner {
 
@@ -29,7 +29,7 @@ class BindingNestedMultiViewListAdapter<T : BindingNestedUiModel>(
             parent,
             false
         ).apply {
-            parentLifecycleOwner?.let { owner ->
+            lifecycleOwner?.let { owner ->
                 lifecycleOwner = owner
             }
         }
@@ -62,6 +62,16 @@ class BindingNestedMultiViewListAdapter<T : BindingNestedUiModel>(
 
     override fun getItemViewType(position: Int): Int {
         return getItem(position).layoutId
+    }
+
+    override fun onViewAttachedToWindow(holder: BindingNestedMultiViewHolder<T>) {
+        super.onViewAttachedToWindow(holder)
+        holder.onAttached()
+    }
+
+    override fun onViewDetachedFromWindow(holder: BindingNestedMultiViewHolder<T>) {
+        super.onViewDetachedFromWindow(holder)
+        holder.onDetached()
     }
 
     private val lifecycleRegistry = LifecycleRegistry(this)
