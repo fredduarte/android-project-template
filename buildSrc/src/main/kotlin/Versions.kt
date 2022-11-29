@@ -14,7 +14,7 @@ object Versions {
     const val appCompat = "1.2.0"
     const val coreKtx = "1.3.2"
 
-    const val lifecycle = "2.2.0"
+    const val lifecycle = "2.5.1"
 
     const val constraintLayout = "2.0.4"
     const val materialComponents = "1.2.1"
