@@ -7,8 +7,6 @@ plugins {
 }
 
 android {
-    buildToolsVersion(Versions.buildToolsVersion)
-
     compileSdkVersion(Versions.compileSdkVersion)
 
     defaultConfig {

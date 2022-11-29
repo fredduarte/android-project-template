@@ -3,8 +3,8 @@ object Versions {
     const val kotlin = "1.4.10"
     const val androidGradlePlugin = "4.1.0"
 
-    const val minSdkVersion = 21
-    const val compileSdkVersion = 30
+    const val minSdkVersion = 26
+    const val compileSdkVersion = 33
     const val targetSdkVersion = compileSdkVersion
     const val buildToolsVersion = "29.0.2"
 
