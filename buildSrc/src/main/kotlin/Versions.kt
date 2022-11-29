@@ -1,12 +1,11 @@
 object Versions {
 
-    const val kotlin = "1.4.10"
-    const val androidGradlePlugin = "4.1.0"
+    const val kotlin = "1.7.20"
+    const val androidGradlePlugin = "7.3.1"
 
     const val minSdkVersion = 26
     const val compileSdkVersion = 33
     const val targetSdkVersion = compileSdkVersion
-    const val buildToolsVersion = "29.0.2"
 
     const val applicationId = "com.template.project.android"
     const val versionCode = 1
